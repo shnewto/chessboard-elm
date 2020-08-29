@@ -26,11 +26,11 @@
 }
 
 .dark  {
-    background-image: url('res/board/dark-square.png');
+    background-image: url('/res/board/dark-square.png');
 }
 
 .light {
-    background-image: url('res/board/light-square.png');
+    background-image: url('/res/board/light-square.png');
 }
 
 .piece {

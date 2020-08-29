@@ -213,7 +213,7 @@ getPeiceImagePath : Maybe Piece -> String
 getPeiceImagePath piece =
     let
         path =
-            "res/pieces/"
+            "/res/pieces/"
 
         image =
             case piece of
