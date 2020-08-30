@@ -2,7 +2,7 @@
 all: js build 
 
 js: 
-	elm make src/Main.elm --output=elm.js
+	elm make --optimize src/Main.elm --output=elm.js
 
 build:
 	mkdir -p build
