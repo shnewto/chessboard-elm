@@ -3,6 +3,8 @@ module View.Board exposing (viewBoard)
 import Board
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import List
+import Style
 
 
 viewBoard : Html msg
@@ -12,456 +14,641 @@ viewBoard =
             { board = Board.startingPositions
             }
     in
-    div [ class "chessboard" ]
-        [ div [ class "a8 light square" ]
+    div Style.chessboard
+        [ div (List.concat [ Style.square, Style.light, [ class "a8" ] ])
+            [ img (List.concat [ Style.piece, [ src <| Board.getPeiceImagePath model.board.a8 ] ]) []
+            ]
+        , div (List.concat [ Style.square, Style.dark, [ class "b8" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.a8
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <|
+                            Board.getPeiceImagePath model.board.b8
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "b8 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "c8" ] ])
             [ img
-                [ class "piece"
-                , src <|
-                    Board.getPeiceImagePath model.board.b8
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <|
+                            Board.getPeiceImagePath model.board.c8
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "c8 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "d8" ] ])
             [ img
-                [ class "piece"
-                , src <|
-                    Board.getPeiceImagePath model.board.c8
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <|
+                            Board.getPeiceImagePath model.board.d8
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "d8 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "e8" ] ])
             [ img
-                [ class "piece"
-                , src <|
-                    Board.getPeiceImagePath model.board.d8
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.e8
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "e8 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "f8" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.e8
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.f8
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "f8 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "g8" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.f8
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.g8
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "g8 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "h8" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.g8
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.h8
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "h8 dark square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "a7" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.h8
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.a7
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "a7 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "b7" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.a7
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.b7
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "b7 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "c7" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.b7
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.c7
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "c7 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "d7" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.c7
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.d7
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "d7 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "e7" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.d7
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.e7
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "e7 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "f7" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.e7
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.f7
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "f7 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "g7" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.f7
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.g7
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "g7 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "h7" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.g7
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.h7
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "h7 light square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "a6" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.h7
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.a6
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "a6 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "b6" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.a6
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.b6
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "b6 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "c6" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.b6
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.c6
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "c6 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "d6" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.c6
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.d6
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "d6 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "e6" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.d6
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.e6
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "e6 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "f6" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.e6
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.f6
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "f6 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "g6" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.f6
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.g6
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "g6 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "h6" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.g6
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.h6
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "h6 dark square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "a5" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.h6
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.a5
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "a5 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "b5" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.a5
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.b5
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "b5 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "c5" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.b5
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.c5
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "c5 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "d5" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.c5
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.d5
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "d5 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "e5" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.d5
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.e5
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "e5 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "f5" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.e5
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.f5
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "f5 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "g5" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.f5
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.g5
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "g5 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "h5" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.g5
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.h5
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "h5 light square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "a4" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.h5
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.a4
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "a4 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "b4" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.a4
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.b4
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "b4 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "c4" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.b4
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.c4
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "c4 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "d4" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.c4
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.d4
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "d4 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "e4" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.d4
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.e4
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "e4 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "f4" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.e4
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.f4
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "f4 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "g4" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.f4
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.g4
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "g4 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "h4" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.g4
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.h4
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "h4 dark square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "a3" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.h4
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.a3
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "a3 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "b3" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.a3
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.b3
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "b3 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "c3" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.b3
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.c3
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "c3 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "d3" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.c3
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.d3
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "d3 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "e3" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.d3
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.e3
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "e3 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "f3" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.e3
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.f3
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "f3 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "g3" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.f3
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.g3
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "g3 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "h3" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.g3
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.h3
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "h3 light square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "a2" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.h3
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.a2
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "a2 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "b2" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.a2
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.b2
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "b2 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "c2" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.b2
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.c2
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "c2 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "d2" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.c2
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.d2
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "d2 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "e2" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.d2
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.e2
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "e2 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "f2" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.e2
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.f2
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "f2 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "g2" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.f2
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.g2
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "g2 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "h2" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.g2
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.h2
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "h2 dark square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "a1" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.h2
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.a1
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "a1 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "b1" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.a1
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.b1
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "b1 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "c1" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.b1
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.c1
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "c1 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "d1" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.c1
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.d1
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "d1 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "e1" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.d1
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.e1
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "e1 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "f1" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.e1
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.f1
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "f1 light square" ]
+        , div (List.concat [ Style.square, Style.dark, [ class "g1" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.f1
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.g1
+                      ]
+                    ]
+                )
                 []
             ]
-        , div [ class "g1 dark square" ]
+        , div (List.concat [ Style.square, Style.light, [ class "h1" ] ])
             [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.g1
-                ]
-                []
-            ]
-        , div [ class "h1 light square" ]
-            [ img
-                [ class "piece"
-                , src <| Board.getPeiceImagePath model.board.h1
-                ]
+                (List.concat
+                    [ Style.piece
+                    , [ src <| Board.getPeiceImagePath model.board.h1
+                      ]
+                    ]
+                )
                 []
             ]
         ]
